@@ -6,4 +6,4 @@ from django.forms import ModelForm
 class BankAccountApplicationForm(ModelForm):
     class  Meta:
         model = User
-        fields = ['first_name', 'last_name', 'card_num']
+        fields = ['first_name', 'last_name', 'year_of_birth',]

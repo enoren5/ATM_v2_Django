@@ -1,6 +1,19 @@
 
 <!-- Approved application results in:
-    1.  debit card number
+    1. debit card number
     2. routing number
     3. account number
  -->
+
+<h1>Your application was approved. Welcome Aboard!</h1>
+<h3>Here are your banking details:</h3>
+<ul>
+    <li>pk: {{approved_user.pk}}</li>
+    <li>First Name: {{approved_user.first_name}}</li>
+    <li>Last Name: {{approved_user.last_name}}</li>
+    <li>YOB: {{approved_user.year_of_birth}}</li>
+    <li>Client Since (Application Approved On): {{approved_user.application_approval_date}}</li>
+    <li>Assigned Access Card Number (4 Digits): {{approved_user.unique_card_num}}</li>
+    <li>Assigned Routing Number: {{approved_user.routing_num}}</li>
+    <li>Assigned Bank Account Number {{approved_user.account_num}}</li>
+</ul>
