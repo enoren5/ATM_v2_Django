@@ -19,4 +19,4 @@ class User(models.Model):
     account_num = models.CharField(max_length=7, default=str(random.randint(1000000, 9999999)))
 
     def __str__(self):
-        return f'Client {self.first_name} {self.last_name}'
+        return f'Client {self.first_name} {self.last_name} with id: {self.pk} with account number: {self.account_num}'

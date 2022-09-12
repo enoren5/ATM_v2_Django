@@ -14,13 +14,13 @@ def new_application(request):
         if form.is_valid():
             print(form.cleaned_data)
             form.save()
-            return redirect(reverse('account_application_form:approved'))             
-    
+            return redirect(reverse('account_application_form:approved', args=[form.instance.id]))
+           
     # ELSE, Re-RENDER FORM    
     else:
         form = BankAccountApplicationForm
     return render(request, 'new_application/welcome.html', context={'form':form})
 
-def approved(request):
-    approved_user = models.User.objects.get(pk=6)
+def approved(request, pk):
+    approved_user = models.User.objects.get(pk=pk)
     return render(request, 'new_application/approved.html', context= {'approved_user':approved_user})
